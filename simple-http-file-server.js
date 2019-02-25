@@ -8,8 +8,16 @@ const url = require('url');
 const path = require('path');
 const fs = require('fs');
 
+//(2) Use third party package in project
+var log = require('log-util');
+log.verbose('verbose', 0);
+log.debug('debug', 1);
+log.info('info', 2);
+log.warn('warn', 3);
+log.error('error', 4);
+
 //(3) Added a n own file-based module
-const mimes = require('./getMimeType.js')
+const mimes = require('./getMimeType.js');
 
 var server = http.createServer((req, res) => {
     console.log(req.url);
